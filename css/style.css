@@ -31,7 +31,7 @@ h2{
     border-radius: 10px;
     margin-left: 20%;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     float: left;
 
 }
@@ -114,6 +114,23 @@ h2{
 #result{
   margin-top: 10px;
   margin-left: 42%;
+}
+
+.article{
+  background-image: url(../images/1.gif);
+  height: 300px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#startButton{
+  display: block;
+  margin-left: 42%;
+}
+h3{
+  text-align: center;
 }
 
 /* 
@@ -213,6 +230,12 @@ ul{
     display: flex;
     justify-content: center;
     width: 150px;
+}
+
+.article{
+  background-image: url(../images/small.gif);
+  width: 300px;
+  height: 300px;
 }
 
 }
