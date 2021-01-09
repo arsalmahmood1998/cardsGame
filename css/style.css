@@ -1,0 +1,203 @@
+
+body{
+  background-color: #12232E;
+  color : white;
+  justify-content: center;
+
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  font-size : 3em;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  font-size : 3em;
+}
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #203647;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #203647;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+#game{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+}
+
+#game > div {
+  width: 500px;
+}
+
+#playerOneArea{
+  border-right: 1px solid white;
+}
+
+#playerTwoArea{
+  border-left: 1px solid white;
+}
+
+
+#game >div > img{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+
+}
+
+#result{
+  margin-top: 10px;
+  margin-left: 42%;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+  
+  
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  /* CSS */
+
+  h1 , h2{
+    font-size: 1.5em;
+  }
+
+ .glow-on-hover {
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+    width: 170px;
+    float: left;
+
+} 
+
+#game >div > img{
+  height: 100px;
+}
+
+#result{
+  margin-left: 20%;
+}
+  
+}
