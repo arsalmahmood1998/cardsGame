@@ -27,23 +27,29 @@ function pickCard (){
 }
 
 function playerOneFunction(){
-	document.getElementById("playerOneButton").innerHTML = "Player One Clicked...!";
-	var src = document.getElementById("playerOneArea");
 	if (playerOne.length < 3){
+		document.getElementById("playerOneButton").innerHTML = "Player One Clicked...!";
+		var src = document.getElementById("playerOneArea");
 		card = pickCard();
+		playerOne.push(card);
+		src.appendChild(card);
 	}
-	playerOne.push(card);
-	src.appendChild(card);
+	else{
+		document.getElementById("playerOneButton").innerHTML = "You already have three cards";
+	}
 }
 
 function playerTwoFunction(){
-	document.getElementById("playerTwoButton").innerHTML = "Player Two Clicked...!";
-	var src = document.getElementById("playerTwoArea");
 	if (playerTwo.length < 3){
+		document.getElementById("playerTwoButton").innerHTML = "Player Two Clicked...!";
+		var src = document.getElementById("playerTwoArea");
 		card = pickCard();
+		playerTwo.push(card);
+		src.appendChild(card);
 	}
-	playerTwo.push(card);
-	src.appendChild(card);
+	else{
+		document.getElementById("playerTwoButton").innerHTML = "You already have three cards";
+	}
 }
 
 var spadesCount = 0;
@@ -100,6 +106,11 @@ function calculateTrial(array){
 	var indexOne = returnIndex(array[0]);
 	var indexTwo = returnIndex(array[1]);
 	var indexThree = returnIndex(array[2]);
+	console.log("index one=" + indexOne.toString())
+	console.log("index two=" + indexTwo.toString())
+	console.log("index three=" + indexThree.toString())
+
+
 	if (indexOne == indexTwo == indexThree){
 		return "trial";
 	}
@@ -167,12 +178,14 @@ function sequence(array){
 
 function calculateResult(){
 	console.log("Result wanted");
-	// console.log(calculateColor(playerOne));
-	// console.log(calculateTrial(playerOne));
-	// console.log(sequence(playerOne));
-	// console.log(calculateColor(playerTwo));
-	// console.log(calculateTrial(playerTwo));
-	// console.log(sequence(playerTwo));
+	console.log(calculateColor(playerOne));
+	console.log(calculateTrial(playerOne));
+	console.log(sequence(playerOne));
+	console.log(highCard(playerOne));
+	console.log(calculateColor(playerTwo));
+	console.log(calculateTrial(playerTwo));
+	console.log(sequence(playerTwo));
+	console.log(highCard(playerTwo));
 
 	if (calculateTrial(playerOne)=="trial"){
 		return "Player One Wins with a trial";
@@ -196,7 +209,7 @@ function calculateResult(){
 		return "Player One Wins with a duo";
 	} 
 	else if (calculateTrial(playerTwo) == "duo"){
-		return "Player Two Wins with a trial";
+		return "Player Two Wins with a duo";
 	}
 	else if (highCard(playerTwo) > highCard(playerOne)){
 		return "Player Two wins with a high card";
